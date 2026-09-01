@@ -353,21 +353,15 @@ Além do tempo de execução, são analisadas a vazão de vetores, a vazão de e
 
 Para um tempo de execução `t`:
 $$
-\[
 P_v=\frac{N}{t}.
-\]
 $$
 ### Vazão de elementos
 $$
-\[
 P_e=\frac{NT}{t}.
-\]
 $$
 ### Custo temporal por elemento
 $$
-\[
 C_e=\frac{t\times10^9}{NT}
-\]
 $$
 em ns/elemento.
 
@@ -375,23 +369,19 @@ em ns/elemento.
 
 O fator de aceleração da versão otimizada em relação à versão base é:
 $$
-\[
 S(T)=
 \frac{t_{\mathrm{base}}(T)}
      {t_{\mathrm{otimizada}}(T)}.
-\]
 $$
 Valores de $S(T) > 1$ indicam menor tempo de execução da versão otimizada.
 
 A redução percentual do tempo é:
 $$
-\[
 R(T)=100
 \left(
 1-\frac{t_{\mathrm{otimizada}}(T)}
         {t_{\mathrm{base}}(T)}
 \right).
-\]
 $$
 A mediana é utilizada como medida central, mantendo-se as observações individuais para análise da variabilidade.
 
