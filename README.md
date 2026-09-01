@@ -5,10 +5,8 @@ Este repositório contém as implementações base e otimizada e a infraestrutur
 Para um vetor de referência `q` e um conjunto de `N` vetores `x_i`, cada um com `T` elementos reais, é calculada:
 
 $$
-\[
 D(q,x_i)=\sum_{j=0}^{T-1}(q_j-x_{ij})^2,
 \qquad i=0,\ldots,N-1.
-\]
 $$
 
 A implementação otimizada utiliza SIMD AVX, desenrolamento do laço, quatro acumuladores vetoriais independentes e qualificadores `restrict`, mantendo a execução em um único fluxo.
