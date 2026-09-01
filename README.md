@@ -148,28 +148,9 @@ O valor do tempo pode conter casas decimais e permanece expresso em milissegundo
 
 Caso sejam necessários parâmetros adicionais, estes são informados **depois do tamanho do vetor**, preservando `T` como primeiro argumento.
 
-A interface posicional utiliza:
-
-```text
-N = 16384
-implementação = otimizada
-repetições reportadas = 1
-aquecimentos = 5
-```
-
 As execuções de aquecimento não integram o tempo informado.
 
 Alocação, inicialização dos dados, aquecimento, cálculo de checksum e impressão também permanecem fora da região cronometrada.
-
-Essa interface atende à forma padronizada:
-
-```text
-meu_programa n
-```
-
-em que `n` corresponde ao tamanho do vetor.
-
----
 
 ## 6. Calibração experimental
 
@@ -191,36 +172,13 @@ e seleciona o maior valor admissível de `N` segundo o critério de memória def
 
 A calibração também seleciona deterministicamente um CPU lógico permitido, considerando a topologia física do processador.
 
-A configuração selecionada na execução atual foi:
+A configuração selecionada na nesta execução:
 
 ```text
 N = 16384
 CPU lógico = 2
 T máximo = 4096
 ```
-
-A seleção do CPU registrou:
-
-```text
-Política:
-deterministic_physical_core_representative_avoid_cpu0
-
-Representantes de núcleos físicos permitidos:
-[0, 2]
-
-CPU selecionado:
-2
-
-CPUs lógicos do núcleo selecionado:
-[2, 3]
-```
-
-Para `N=16384` e `T=4096`, a estimativa da principal alocação de memória no pior caso foi:
-
-```text
-512,2 MiB
-```
-
 A adequação da temporização foi avaliada utilizando `CLOCK_MONOTONIC_RAW`.
 
 Os principais resultados da calibração foram:
@@ -358,14 +316,6 @@ python3 scripts/analyze_comparison.py
 python3 scripts/plot_comparison.py
 ```
 
-A mesma sequência pode ser executada por:
-
-```bash
-make part2
-```
-
----
-
 ## 10. Dados produzidos
 
 A execução comparativa produz:
@@ -402,39 +352,39 @@ Além do tempo de execução, são analisadas a vazão de vetores, a vazão de e
 ### Vazão de vetores
 
 Para um tempo de execução `t`:
-
+$$
 \[
 P_v=\frac{N}{t}.
 \]
-
+$$
 ### Vazão de elementos
-
+$$
 \[
 P_e=\frac{NT}{t}.
 \]
-
+$$
 ### Custo temporal por elemento
-
+$$
 \[
 C_e=\frac{t\times10^9}{NT}
 \]
-
+$$
 em ns/elemento.
 
 ### Fator de aceleração
 
 O fator de aceleração da versão otimizada em relação à versão base é:
-
+$$
 \[
 S(T)=
 \frac{t_{\mathrm{base}}(T)}
      {t_{\mathrm{otimizada}}(T)}.
 \]
-
-Valores de `S(T) > 1` indicam menor tempo de execução da versão otimizada.
+$$
+Valores de $S(T) > 1$ indicam menor tempo de execução da versão otimizada.
 
 A redução percentual do tempo é:
-
+$$
 \[
 R(T)=100
 \left(
@@ -442,7 +392,7 @@ R(T)=100
         {t_{\mathrm{base}}(T)}
 \right).
 \]
-
+$$
 A mediana é utilizada como medida central, mantendo-se as observações individuais para análise da variabilidade.
 
 ---
