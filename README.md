@@ -4,10 +4,10 @@ Este repositório contém as implementações base e otimizada e a infraestrutur
 
 Para um vetor de referência `q` e um conjunto de `N` vetores `x_i`, cada um com `T` elementos reais, é calculada:
 
-\[
+$$
 D(q,x_i)=\sum_{j=0}^{T-1}(q_j-x_{ij})^2,
 \qquad i=0,\ldots,N-1.
-\]
+$$
 
 A versão otimizada utiliza SIMD AVX, desenrolamento do laço, quatro acumuladores vetoriais independentes e qualificadores `restrict`, mantendo a execução em um único fluxo.
 
@@ -19,13 +19,13 @@ Os experimentos foram desenvolvidos para GNU/Linux x86-64.
 
 São necessários:
 
-- GCC com suporte a C++20;
-- GNU Make;
-- Python 3;
-- `taskset`;
-- NumPy;
-- pandas;
-- Matplotlib.
+* GCC com suporte a C++20;
+* GNU Make;
+* Python 3;
+* `taskset`;
+* NumPy;
+* pandas;
+* Matplotlib.
 
 Ferramentas complementares utilizadas na caracterização do ambiente incluem `lscpu` e `perf`.
 
@@ -47,8 +47,8 @@ python3 -m pip install -r requirements.txt
 Também pode ser utilizado um ambiente Conda:
 
 ```bash
-conda create -n t0_vector_distance python=3.12 numpy pandas matplotlib -c conda-forge
-conda activate t0_vector_distance
+conda create -n t1_vector_distance python=3.12 numpy pandas matplotlib -c conda-forge
+conda activate t1_vector_distance
 ```
 
 O benchmark C++ utiliza o GCC do sistema:
@@ -135,7 +135,7 @@ A calibração considera o maior tamanho avaliado, `T=4096`, e limita a principa
 
 O procedimento também seleciona deterministicamente um CPU lógico permitido, considerando a topologia física do processador.
 
-A adequação da temporização é verificada com `CLOCK_MONOTONIC_RAW`, comparando o custo mediano do temporizador com o tempo mediano do kernel para `T=32`.
+A adequação da temporização é verificada com `CLOCK_MONOTONIC_RAW`, comparando o custo mediano das leituras do relógio com o tempo mediano do kernel para `T=32`.
 
 A configuração utilizada nos experimentos finais foi:
 
@@ -146,7 +146,7 @@ T máximo = 4096
 fração máxima de MemAvailable = 0,25
 ```
 
-A calibração utilizou 15 aferições, precedidas por três execuções de aquecimento. Para `T=32`, foram registrados aproximadamente `231,5 µs` para a mediana do kernel e `31 ns` para o custo mediano do temporizador.
+A calibração utilizou 15 aferições, precedidas por três execuções de aquecimento. Para `T=32`, foram registrados aproximadamente `231,5 µs` para a mediana do kernel e `31 ns` para o custo mediano de duas leituras consecutivas do relógio.
 
 Os resultados são registrados em:
 
@@ -171,16 +171,16 @@ com `N=8192` constante.
 
 As versões avaliadas são:
 
-- `base` — implementação base;
-- `optimized` — implementação otimizada.
+* `base` — implementação base;
+* `optimized` — implementação otimizada.
 
-A versão otimizada preserva o mesmo cálculo, precisão `double`, organização principal dos dados e execução em um único fluxo. A otimização concentra-se no laço interno e utiliza:
+A versão otimizada preserva o mesmo cálculo, a precisão `double`, a organização principal dos dados e a execução em um único fluxo. A otimização concentra-se no laço interno e utiliza:
 
-- SIMD AVX de 256 bits;
-- quatro acumuladores vetoriais independentes;
-- desenrolamento em blocos de 16 elementos;
-- qualificadores `restrict`;
-- tratamento vetorial e escalar dos elementos remanescentes.
+* SIMD AVX de 256 bits;
+* quatro acumuladores vetoriais independentes;
+* desenrolamento em blocos de 16 elementos;
+* qualificadores `restrict`;
+* tratamento vetorial e escalar dos elementos remanescentes.
 
 A comparação completa é executada com:
 
@@ -215,31 +215,31 @@ data/part2/comparison_table.csv
 
 Para um tempo de execução `t`, a taxa de vetores é:
 
-\[
+$$
 P_v=\frac{N}{t}.
-\]
+$$
 
 A taxa de elementos é:
 
-\[
+$$
 P_e=\frac{NT}{t}.
-\]
+$$
 
 O custo temporal por elemento é:
 
-\[
+$$
 C_e=\frac{t\times10^9}{NT}
-\]
+$$
 
 em ns/elemento.
 
 O fator de aceleração da versão otimizada é calculado por:
 
-\[
+$$
 S(T)=
 \frac{t_{\mathrm{base}}(T)}
      {t_{\mathrm{otimizada}}(T)}.
-\]
+$$
 
 A mediana é utilizada como medida central, mantendo-se as aferições individuais para análise da variabilidade.
 
@@ -253,12 +253,12 @@ results/part2/
 
 São produzidos:
 
-- `execution_time_comparison.png` — tempo mediano de execução;
-- `vectors_per_second_comparison.png` — vazão de vetores;
-- `elements_per_second_comparison.png` — vazão de elementos;
-- `ns_per_element_comparison.png` — tempo por elemento;
-- `execution_time_variability_comparison.png` — distribuição dos tempos;
-- `speedup.png` — fator de aceleração da versão otimizada.
+* `execution_time_comparison.png` — tempo mediano de execução;
+* `vectors_per_second_comparison.png` — vazão de vetores;
+* `elements_per_second_comparison.png` — vazão de elementos;
+* `ns_per_element_comparison.png` — tempo por elemento;
+* `execution_time_variability_comparison.png` — distribuição dos tempos;
+* `speedup.png` — fator de aceleração da versão otimizada.
 
 ## 11. Plataforma experimental
 
@@ -286,7 +286,7 @@ e executado em um único CPU lógico, conforme a configuração determinada dura
 
 As informações detalhadas do sistema e dos parâmetros experimentais são preservadas em `system/`.
 
-## 13. Reprodutibilidade
+## 12. Reprodutibilidade
 
 Os principais artefatos para reprodução e auditoria dos resultados incluem:
 
@@ -303,7 +303,7 @@ system/experiment_parameters.txt
 
 Esses arquivos preservam a configuração experimental, a calibração, as aferições individuais, as estatísticas derivadas e a caracterização da plataforma.
 
-## 14. Sequência completa
+## 13. Sequência completa
 
 Após clonar o repositório:
 
@@ -342,7 +342,7 @@ cuja única saída padrão segue a forma:
 xavier, 1000, <tempo_ms>
 ```
 
-## 15. Estrutura principal do repositório
+## 14. Estrutura principal do repositório
 
 ```text
 .
@@ -372,7 +372,7 @@ xavier, 1000, <tempo_ms>
 └── PAD_2026___T1___Relatorio_2.pdf
 ```
 
-## 16. Relatório
+## 15. Relatório
 
 O relatório final está disponível em:
 
