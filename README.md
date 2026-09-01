@@ -12,8 +12,8 @@ para todos os vetores do conjunto. A região cronometrada contém exclusivamente
 
 A versão final mantém duas implementações no mesmo executável:
 
-- `baseline_v3`: versão base com laço escalar;
-- `optimized_v4`: versão otimizada com SIMD AVX, desenrolamento do laço, quatro acumuladores vetoriais independentes e `__restrict__`.
+- `baseline`: versão base com laço escalar;
+- `optimized`: versão otimizada com SIMD AVX, desenrolamento do laço, quatro acumuladores vetoriais independentes e `__restrict__`.
 
 A comparação final foi realizada com `N = 8192` constante e `T ∈ {32, 64, 128, 256, 512, 1024, 2048, 4096}`.
 
@@ -147,8 +147,8 @@ A versão otimizada foi mais rápida em todos os tamanhos avaliados. O fator de 
 
 ## 9. Relatório
 
-O relatório final está disponível em:
+O relatório está disponível em:
 
 ```text
-report/Relatorio_PAD_T1_2026.pdf
+Relatorio_PAD_T1_2026.pdf
 ```
