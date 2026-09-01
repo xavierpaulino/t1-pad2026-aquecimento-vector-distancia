@@ -1,6 +1,6 @@
 # T1: Aquecimento - Distância Quadrática entre Vetores
 
-Este repositório contém as implementações base e otimizada, os scripts experimentais, os resultados e o relatório final do Trabalho 1 de Processamento de Alto Desempenho (PAD).
+Este repositório contém as implementações base e otimizada, os scripts experimentais, os resultados e o relatório do Trabalho 1 de Processamento de Alto Desempenho (PAD).
 
 Para um vetor de referência `q` e um conjunto de `N` vetores `x_i`, cada um com `T` valores reais, é calculada a distância quadrática
 
