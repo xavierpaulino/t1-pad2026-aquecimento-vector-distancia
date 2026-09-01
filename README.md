@@ -369,7 +369,7 @@ xavier, 1000, <tempo_ms>
 ├── results/
 │   └── part2/
 ├── system/
-└── Relatorio_PAD_T1_2026.pdf
+└── PAD_2026___T1___Relatorio_2.pdf
 ```
 
 ## 16. Relatório
@@ -377,7 +377,7 @@ xavier, 1000, <tempo_ms>
 O relatório final está disponível em:
 
 ```text
-Relatorio_PAD_T1_2026.pdf
+PAD_2026___T1___Relatorio_2.pdf
 ```
 
 O documento apresenta a implementação base, a otimização desenvolvida, a calibração da configuração experimental, a metodologia de aferição, a análise da variabilidade e a comparação quantitativa entre as duas versões.
