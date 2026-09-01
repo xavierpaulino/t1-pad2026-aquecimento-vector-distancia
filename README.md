@@ -59,7 +59,7 @@ make release
 make test
 ```
 
-O teste de corretude produz:
+O teste de verificação produz:
 
 ```text
 SELF_TEST_OK
