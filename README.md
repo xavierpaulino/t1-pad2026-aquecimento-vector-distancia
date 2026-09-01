@@ -110,24 +110,7 @@ config/experiment.conf
 config/calibration.json
 ```
 
-## 4. Resultados
-
-A versão otimizada apresentou menor tempo mediano em todos os tamanhos avaliados. O fator de aceleração variou aproximadamente entre `1,22×` e `1,73×`, com o maior ganho em `T=1024`.
-
-| T | Base (ms) | Otimizada (ms) | Aceleração | Redução |
-|---:|---:|---:|---:|---:|
-| 32 | 0,478 | 0,392 | 1,22× | 17,8% |
-| 64 | 1,047 | 0,805 | 1,30× | 23,1% |
-| 128 | 2,160 | 1,503 | 1,44× | 30,4% |
-| 256 | 4,708 | 2,907 | 1,62× | 38,3% |
-| 512 | 9,373 | 5,817 | 1,61× | 37,9% |
-| 1024 | 19,227 | 11,092 | **1,73×** | **42,3%** |
-| 2048 | 40,187 | 27,750 | 1,45× | 30,9% |
-| 4096 | 77,485 | 51,536 | 1,50× | 33,5% |
-
-Os dados completos da comparação estão disponíveis em `data/part2/`, e os gráficos correspondentes em `results/part2/`.
-
-## 5. Artefatos de reprodutibilidade
+## 4. Artefatos de reprodutibilidade
 
 Os principais arquivos utilizados para reprodução e auditoria da avaliação são:
 
@@ -143,11 +126,11 @@ system/experiment_parameters.txt
 system/part2_experiment_parameters.txt
 ```
 
-## 6. Plataforma experimental
+## 5. Plataforma experimental
 
 Os resultados foram obtidos em um Lenovo ThinkPad T530 com Intel Core i5-3320M @ 2.60 GHz, arquitetura x86-64, dois núcleos físicos, quatro CPUs lógicos e suporte a AVX. O ambiente utilizou GCC 10.5.0 e Ubuntu 24.04.4 LTS. As execuções experimentais foram fixadas no CPU lógico 2.
 
-## 7. Relatório
+## 6. Relatório
 
 O relatório do trabalho está disponível no arquivo:
 
