@@ -109,28 +109,11 @@ A configuração e os dados de calibração são preservados em:
 config/experiment.conf
 config/calibration.json
 ```
-
-## 4. Artefatos de reprodutibilidade
-
-Os principais arquivos utilizados para reprodução e auditoria da avaliação são:
-
-```text
-config/experiment.conf
-config/calibration.json
-data/part2/raw_measurements_comparison.csv
-data/part2/measurements_comparison_with_metrics.csv
-data/part2/summary_comparison.csv
-data/part2/comparison_table.csv
-system/system_info.txt
-system/experiment_parameters.txt
-system/part2_experiment_parameters.txt
-```
-
-## 5. Plataforma experimental
+## 4. Plataforma experimental
 
 Os resultados foram obtidos em um Lenovo ThinkPad T530 com Intel Core i5-3320M @ 2.60 GHz, arquitetura x86-64, dois núcleos físicos, quatro CPUs lógicos e suporte a AVX. O ambiente utilizou GCC 10.5.0 e Ubuntu 24.04.4 LTS. As execuções experimentais foram fixadas no CPU lógico 2.
 
-## 6. Relatório
+## 5. Relatório
 
 O relatório do trabalho está disponível no arquivo:
 
