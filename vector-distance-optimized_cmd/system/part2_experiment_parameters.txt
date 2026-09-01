@@ -1,0 +1,14 @@
+EXPERIMENT=part2_baseline_vs_optimized
+N=8192
+SEED=42
+REPETITIONS_PER_VARIANT_T=30
+BATCHES=5
+REPETITIONS_PER_BATCH=6
+WARMUP_PER_VARIANT_T_PER_BATCH=2
+CPU=2
+T_VALUES=32 64 128 256 512 1024 2048 4096
+VARIANTS=baseline_v3 optimized_v4
+ORDER=randomized_variant_T_blocks_deterministic
+ORDER_SEED_BASE=42
+CXX=/usr/bin/g++
+RELEASE_FLAGS=-O3 -march=native

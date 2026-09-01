@@ -1,0 +1,66 @@
+{
+  "chosen_N": 8192,
+  "criterion": "largest power-of-two N within memory budget, validated by measured timer/kernel ratio",
+  "accepted": true,
+  "T_min": 32,
+  "T_max": 4096,
+  "memory_fraction": 0.25,
+  "mem_available_bytes_at_calibration": 1634893824,
+  "memory_budget_bytes": 408723456,
+  "estimated_main_allocation_bytes_at_T4096": 268533760,
+  "estimated_fraction_of_memavailable": 0.1642514982061612,
+  "probe_repetitions": 15,
+  "probe_warmup": 3,
+  "seed": 42,
+  "cpu": 2,
+  "cpu_selection": {
+    "selected_cpu": 2,
+    "selection_policy": "deterministic_physical_core_representative_avoid_cpu0",
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "physical_core_representatives": [
+      0,
+      2
+    ],
+    "selected_package": 0,
+    "selected_core": 1,
+    "selected_core_logical_siblings": [
+      2,
+      3
+    ]
+  },
+  "timer": {
+    "samples": 100000,
+    "clock_resolution_ns": 1,
+    "min_positive_delta_ns": 20,
+    "median_pair_delta_ns": 31,
+    "p95_pair_delta_ns": 34
+  },
+  "T32_kernel_elapsed_ns": [
+    236569,
+    235517,
+    271904,
+    232206,
+    231452,
+    229352,
+    246601,
+    230505,
+    230584,
+    226344,
+    241611,
+    229252,
+    230498,
+    225845,
+    238040
+  ],
+  "T32_kernel_median_ns": 231452,
+  "T32_kernel_min_ns": 225845,
+  "T32_kernel_max_ns": 271904,
+  "median_timer_pair_overhead_pct_of_T32_kernel": 0.013393705822373538,
+  "p95_timer_pair_delta_pct_of_T32_kernel_median": 0.014689870901958073,
+  "max_allowed_timer_overhead_pct": 1.0
+}
