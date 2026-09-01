@@ -118,7 +118,7 @@ Os resultados foram obtidos em um Lenovo ThinkPad T530 com Intel Core i5-3320M @
 O relatório do trabalho está disponível no arquivo:
 
 ```text
-PAD_2026___T1___Relatorio_2.pdf
+PAD_2026_T1_Relatorio_2.pdf
 ```
 
 ## Autor
